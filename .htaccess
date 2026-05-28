@@ -1,0 +1,12 @@
+# Enable rewrite engine for clean URLs
+RewriteEngine On
+RewriteBase /
+
+# Redirect legacy .html pages to clean URL equivalents
+RewriteCond %{THE_REQUEST} \s/([^.]+?)\.html[?\s] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Serve index.html for clean route requests if the file/directory does not exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L,QSA]

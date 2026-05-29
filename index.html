@@ -985,7 +985,9 @@
       }
 
       .about__visual {
-        position: relative;
+        position: sticky;
+        top: 30px;
+        align-self: flex-start;
       }
 
       .about__photo {
@@ -1000,20 +1002,13 @@
         position: relative;
       }
 
-      .about__photo-placeholder {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 16px;
-        color: var(--muted);
-        text-align: center;
-        padding: 24px;
-        line-height: 1.7;
-      }
-
-      .about__photo-placeholder em {
-        font-size: 22px;
+      .about__photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
         display: block;
-        margin-bottom: 12px;
-        color: var(--navy);
+        border-radius: 8px;
       }
 
       .about__accent {
@@ -1074,6 +1069,12 @@
         .about__inner {
           grid-template-columns: 1fr;
         }
+
+        .about__visual {
+          position: static;
+          margin-bottom: 32px;
+        }
+
         .about__accent {
           display: none;
         }
@@ -2273,15 +2274,13 @@
           <div class="container">
             <div class="about__inner">
               <div class="about__visual">
-                <div
-                  class="about__photo"
-                  role="img"
-                  aria-label="Photo of Testimony Olajire, Founder of WritersCo — placeholder"
-                >
-                  <div class="about__photo-placeholder">
-                    <em>"We market. You grow."</em>
-                    Photo of Testimony coming here
-                  </div>
+                <div class="about__photo">
+                  <img
+                    src="images/Testimony-Olajire.jpeg"
+                    alt="Testimony Olajire, Founder of WritersCo"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="about__accent" aria-hidden="true"></div>
               </div>
@@ -2326,11 +2325,11 @@
                     <p class="about__stat-label">Students trained</p>
                   </div>
                   <div role="listitem">
-                    <div class="about__stat-num">100s</div>
+                    <div class="about__stat-num">100+</div>
                     <p class="about__stat-label">Books written</p>
                   </div>
                   <div role="listitem">
-                    <div class="about__stat-num">1000s</div>
+                    <div class="about__stat-num">2000+</div>
                     <p class="about__stat-label">Articles delivered</p>
                   </div>
                   <div role="listitem">
